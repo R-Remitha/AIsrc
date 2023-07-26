@@ -1,0 +1,61 @@
+AUTHORING INTERFACE SETUP GUIDE
+
+BACKEND
+Step1: Create the folder named AuthInterface
+Step2: Clone the project using path
+Step3: Go to the folder using "cd AuthInterface"
+
+Step4: Setup Virtual Environment, Run the following commands in terminal
+python3 -m venv env
+source env/bin/activate
+
+Step5: Run the following commands in the terminal to install dependencies
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+python3 -m ensurepip
+pip install -r requirements.txt
+
+Step6: Inside the env\python3.10\site-packages\flask_navigation\item.py, change line 131 and 132 with below code
+class ItemCollection(collections.abc.MutableSequence,
+collections.abc.Iterable):
+Step7: Inside the env\python3.10\site-packages\flask_navigation\navbar.py, change line 7 below code
+class NavigationBar(collections.abc.Iterable):
+
+Step8: Update the config.py file, change the name and password of database with that of yours
+
+Step9: open the function displayUSR in the file app.py, Change the path of mentioned USR_Generator directories with that of your device path
+Step10: run "python3 main.py" inorder to run the backend code
+Step11: hit the api "http://127.0.0.1:9999/" to enable the creation of databases.
+
+FRONTEND
+Step9: Let the above backend running and open the new terminal and run the following commands
+"npm install"
+"cd client"
+"npm install react-router-dom"
+"npm install axios"
+"npm install --legacy-peer-deps @material-ui/core"
+"npm install --legacy-peer-deps @material-ui/icons"
+"npm install --legacy-peer-deps react-icons"
+"npm run start"
+"pip install Flask-Session
+
+**FINISH**
+
+# to create react app:
+
+# npx create-react-app client
+
+# client in
+
+# package.json : "proxy":"http://127.0.0.1:9999"
+
+# run:
+
+# cd client
+
+# npm install react-router-dom
+
+# npm install axios
+
+# npm i react-flash-message
+
+# npm run start
